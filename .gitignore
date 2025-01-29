@@ -1,0 +1,20 @@
+# macOS 系統檔案
+.DS_Store
+
+# 編譯輸出的執行檔 & 物件檔
+/build/
+*.o
+*.out
+*.dylib
+*.so
+*.exe
+
+# CMake 產生的檔案
+CMakeCache.txt
+CMakeFiles/
+Makefile
+
+# Neovim 暫存文件
+*.swp
+*.swo
+
