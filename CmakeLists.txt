@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(GameProject)
+set(CMAKE_CXX_STANDARD 17)
+
+# ✅ **手動加入 SFML 目錄**
+include_directories(/usr/local/include)
+
+# ✅ **手動加入 SFML 頭文件**
+add_executable(GameProject src/main.cpp)
+
+# ✅ **手動連結 SFML 函式庫**
+target_link_libraries(GameProject
+    /usr/local/lib/libsfml-graphics.dylib
+    /usr/local/lib/libsfml-window.dylib
+    /usr/local/lib/libsfml-system.dylib
+    /usr/local/lib/libsfml-network.dylib
+    /usr/local/lib/libsfml-audio.dylib)
+
