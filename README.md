@@ -91,3 +91,23 @@ sh
 複製編輯
 
 `./build/GameProject`
+
+**~/.zshrc**
+複製編輯
+
+# 設定編譯時標頭檔 & 庫的搜尋路徑
+```
+export CPATH=/usr/local/include:$CPATH
+```
+```
+`export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH`
+```
+
+# 設定執行時動態連結庫的搜尋路徑
+```
+export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH
+```
+```
+export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+```
+
