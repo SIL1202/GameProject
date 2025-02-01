@@ -118,6 +118,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake"
   "/opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/usr/local/lib/cmake/SFML/SFMLConfig.cmake"
+  "/usr/local/lib/cmake/SFML/SFMLConfigDependencies.cmake"
+  "/usr/local/lib/cmake/SFML/SFMLConfigVersion.cmake"
+  "/usr/local/lib/cmake/SFML/SFMLSharedTargets-release.cmake"
+  "/usr/local/lib/cmake/SFML/SFMLSharedTargets.cmake"
   )
 
 # The corresponding makefile is:

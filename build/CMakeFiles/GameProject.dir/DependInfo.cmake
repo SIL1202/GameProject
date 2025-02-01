@@ -8,6 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/sil/.config/nvim/GameProject/src/Game.cpp" "CMakeFiles/GameProject.dir/src/Game.cpp.o" "gcc" "CMakeFiles/GameProject.dir/src/Game.cpp.o.d"
+  "/Users/sil/.config/nvim/GameProject/src/Menu.cpp" "CMakeFiles/GameProject.dir/src/Menu.cpp.o" "gcc" "CMakeFiles/GameProject.dir/src/Menu.cpp.o.d"
+  "/Users/sil/.config/nvim/GameProject/src/Obstacle.cpp" "CMakeFiles/GameProject.dir/src/Obstacle.cpp.o" "gcc" "CMakeFiles/GameProject.dir/src/Obstacle.cpp.o.d"
+  "/Users/sil/.config/nvim/GameProject/src/dino.cpp" "CMakeFiles/GameProject.dir/src/dino.cpp.o" "gcc" "CMakeFiles/GameProject.dir/src/dino.cpp.o.d"
   "/Users/sil/.config/nvim/GameProject/src/main.cpp" "CMakeFiles/GameProject.dir/src/main.cpp.o" "gcc" "CMakeFiles/GameProject.dir/src/main.cpp.o.d"
   )
 

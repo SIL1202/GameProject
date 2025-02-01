@@ -225,6 +225,9 @@ GameProject_SOURCE_DIR:STATIC=/Users/sil/.config/nvim/GameProject
 //No help, variable specified on the command line.
 SFML_DIR:UNINITIALIZED=/usr/local/lib/cmake/SFML
 
+//Path to a file.
+SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

@@ -86,14 +86,78 @@ CMakeFiles/GameProject.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameProject.dir/src/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sil/.config/nvim/GameProject/src/main.cpp -o CMakeFiles/GameProject.dir/src/main.cpp.s
 
+CMakeFiles/GameProject.dir/src/dino.cpp.o: CMakeFiles/GameProject.dir/flags.make
+CMakeFiles/GameProject.dir/src/dino.cpp.o: /Users/sil/.config/nvim/GameProject/src/dino.cpp
+CMakeFiles/GameProject.dir/src/dino.cpp.o: CMakeFiles/GameProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GameProject.dir/src/dino.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GameProject.dir/src/dino.cpp.o -MF CMakeFiles/GameProject.dir/src/dino.cpp.o.d -o CMakeFiles/GameProject.dir/src/dino.cpp.o -c /Users/sil/.config/nvim/GameProject/src/dino.cpp
+
+CMakeFiles/GameProject.dir/src/dino.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameProject.dir/src/dino.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sil/.config/nvim/GameProject/src/dino.cpp > CMakeFiles/GameProject.dir/src/dino.cpp.i
+
+CMakeFiles/GameProject.dir/src/dino.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameProject.dir/src/dino.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sil/.config/nvim/GameProject/src/dino.cpp -o CMakeFiles/GameProject.dir/src/dino.cpp.s
+
+CMakeFiles/GameProject.dir/src/Game.cpp.o: CMakeFiles/GameProject.dir/flags.make
+CMakeFiles/GameProject.dir/src/Game.cpp.o: /Users/sil/.config/nvim/GameProject/src/Game.cpp
+CMakeFiles/GameProject.dir/src/Game.cpp.o: CMakeFiles/GameProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GameProject.dir/src/Game.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GameProject.dir/src/Game.cpp.o -MF CMakeFiles/GameProject.dir/src/Game.cpp.o.d -o CMakeFiles/GameProject.dir/src/Game.cpp.o -c /Users/sil/.config/nvim/GameProject/src/Game.cpp
+
+CMakeFiles/GameProject.dir/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameProject.dir/src/Game.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sil/.config/nvim/GameProject/src/Game.cpp > CMakeFiles/GameProject.dir/src/Game.cpp.i
+
+CMakeFiles/GameProject.dir/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameProject.dir/src/Game.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sil/.config/nvim/GameProject/src/Game.cpp -o CMakeFiles/GameProject.dir/src/Game.cpp.s
+
+CMakeFiles/GameProject.dir/src/Obstacle.cpp.o: CMakeFiles/GameProject.dir/flags.make
+CMakeFiles/GameProject.dir/src/Obstacle.cpp.o: /Users/sil/.config/nvim/GameProject/src/Obstacle.cpp
+CMakeFiles/GameProject.dir/src/Obstacle.cpp.o: CMakeFiles/GameProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GameProject.dir/src/Obstacle.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GameProject.dir/src/Obstacle.cpp.o -MF CMakeFiles/GameProject.dir/src/Obstacle.cpp.o.d -o CMakeFiles/GameProject.dir/src/Obstacle.cpp.o -c /Users/sil/.config/nvim/GameProject/src/Obstacle.cpp
+
+CMakeFiles/GameProject.dir/src/Obstacle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameProject.dir/src/Obstacle.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sil/.config/nvim/GameProject/src/Obstacle.cpp > CMakeFiles/GameProject.dir/src/Obstacle.cpp.i
+
+CMakeFiles/GameProject.dir/src/Obstacle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameProject.dir/src/Obstacle.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sil/.config/nvim/GameProject/src/Obstacle.cpp -o CMakeFiles/GameProject.dir/src/Obstacle.cpp.s
+
+CMakeFiles/GameProject.dir/src/Menu.cpp.o: CMakeFiles/GameProject.dir/flags.make
+CMakeFiles/GameProject.dir/src/Menu.cpp.o: /Users/sil/.config/nvim/GameProject/src/Menu.cpp
+CMakeFiles/GameProject.dir/src/Menu.cpp.o: CMakeFiles/GameProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GameProject.dir/src/Menu.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GameProject.dir/src/Menu.cpp.o -MF CMakeFiles/GameProject.dir/src/Menu.cpp.o.d -o CMakeFiles/GameProject.dir/src/Menu.cpp.o -c /Users/sil/.config/nvim/GameProject/src/Menu.cpp
+
+CMakeFiles/GameProject.dir/src/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameProject.dir/src/Menu.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sil/.config/nvim/GameProject/src/Menu.cpp > CMakeFiles/GameProject.dir/src/Menu.cpp.i
+
+CMakeFiles/GameProject.dir/src/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameProject.dir/src/Menu.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sil/.config/nvim/GameProject/src/Menu.cpp -o CMakeFiles/GameProject.dir/src/Menu.cpp.s
+
 # Object files for target GameProject
 GameProject_OBJECTS = \
-"CMakeFiles/GameProject.dir/src/main.cpp.o"
+"CMakeFiles/GameProject.dir/src/main.cpp.o" \
+"CMakeFiles/GameProject.dir/src/dino.cpp.o" \
+"CMakeFiles/GameProject.dir/src/Game.cpp.o" \
+"CMakeFiles/GameProject.dir/src/Obstacle.cpp.o" \
+"CMakeFiles/GameProject.dir/src/Menu.cpp.o"
 
 # External object files for target GameProject
 GameProject_EXTERNAL_OBJECTS =
 
 GameProject: CMakeFiles/GameProject.dir/src/main.cpp.o
+GameProject: CMakeFiles/GameProject.dir/src/dino.cpp.o
+GameProject: CMakeFiles/GameProject.dir/src/Game.cpp.o
+GameProject: CMakeFiles/GameProject.dir/src/Obstacle.cpp.o
+GameProject: CMakeFiles/GameProject.dir/src/Menu.cpp.o
 GameProject: CMakeFiles/GameProject.dir/build.make
 GameProject: /usr/local/lib/libsfml-graphics.dylib
 GameProject: /usr/local/lib/libsfml-window.dylib
@@ -101,7 +165,7 @@ GameProject: /usr/local/lib/libsfml-system.dylib
 GameProject: /usr/local/lib/libsfml-network.dylib
 GameProject: /usr/local/lib/libsfml-audio.dylib
 GameProject: CMakeFiles/GameProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable GameProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sil/.config/nvim/GameProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable GameProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GameProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

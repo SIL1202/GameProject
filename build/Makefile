@@ -129,6 +129,102 @@ GameProject/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/build
 .PHONY : GameProject/fast
 
+src/Game.o: src/Game.cpp.o
+.PHONY : src/Game.o
+
+# target to build an object file
+src/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Game.cpp.o
+.PHONY : src/Game.cpp.o
+
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
+
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
+
+src/Menu.o: src/Menu.cpp.o
+.PHONY : src/Menu.o
+
+# target to build an object file
+src/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Menu.cpp.o
+.PHONY : src/Menu.cpp.o
+
+src/Menu.i: src/Menu.cpp.i
+.PHONY : src/Menu.i
+
+# target to preprocess a source file
+src/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Menu.cpp.i
+.PHONY : src/Menu.cpp.i
+
+src/Menu.s: src/Menu.cpp.s
+.PHONY : src/Menu.s
+
+# target to generate assembly for a file
+src/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Menu.cpp.s
+.PHONY : src/Menu.cpp.s
+
+src/Obstacle.o: src/Obstacle.cpp.o
+.PHONY : src/Obstacle.o
+
+# target to build an object file
+src/Obstacle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Obstacle.cpp.o
+.PHONY : src/Obstacle.cpp.o
+
+src/Obstacle.i: src/Obstacle.cpp.i
+.PHONY : src/Obstacle.i
+
+# target to preprocess a source file
+src/Obstacle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Obstacle.cpp.i
+.PHONY : src/Obstacle.cpp.i
+
+src/Obstacle.s: src/Obstacle.cpp.s
+.PHONY : src/Obstacle.s
+
+# target to generate assembly for a file
+src/Obstacle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Obstacle.cpp.s
+.PHONY : src/Obstacle.cpp.s
+
+src/dino.o: src/dino.cpp.o
+.PHONY : src/dino.o
+
+# target to build an object file
+src/dino.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/dino.cpp.o
+.PHONY : src/dino.cpp.o
+
+src/dino.i: src/dino.cpp.i
+.PHONY : src/dino.i
+
+# target to preprocess a source file
+src/dino.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/dino.cpp.i
+.PHONY : src/dino.cpp.i
+
+src/dino.s: src/dino.cpp.s
+.PHONY : src/dino.s
+
+# target to generate assembly for a file
+src/dino.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/dino.cpp.s
+.PHONY : src/dino.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +258,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... GameProject"
+	@echo "... src/Game.o"
+	@echo "... src/Game.i"
+	@echo "... src/Game.s"
+	@echo "... src/Menu.o"
+	@echo "... src/Menu.i"
+	@echo "... src/Menu.s"
+	@echo "... src/Obstacle.o"
+	@echo "... src/Obstacle.i"
+	@echo "... src/Obstacle.s"
+	@echo "... src/dino.o"
+	@echo "... src/dino.i"
+	@echo "... src/dino.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

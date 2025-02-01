@@ -1,5 +1,7 @@
 CMakeFiles/GameProject.dir/src/main.cpp.o: \
   /Users/sil/.config/nvim/GameProject/src/main.cpp \
+  /Users/sil/.config/nvim/GameProject/src/Game.hpp \
+  /Users/sil/.config/nvim/GameProject/src/Menu.hpp \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
   /usr/local/include/SFML/Config.hpp \
@@ -1032,5 +1034,5 @@ CMakeFiles/GameProject.dir/src/main.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/istream
+  /Users/sil/.config/nvim/GameProject/src/Obstacle.hpp \
+  /Users/sil/.config/nvim/GameProject/src/dino.hpp
