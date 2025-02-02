@@ -32,7 +32,7 @@ Dino::~Dino() {}
 void Dino::jump() {
   if (this->shape.getPosition().y >= 330.f) {
     this->isJumping = true;
-    this->velocity.y = -700.f;
+    this->velocity.y = -800.f;
     this->jumpCount++;
     std::cout << "Jump Count: " << this->jumpCount << std::endl;
   }

@@ -33,6 +33,7 @@ private:
   void checkCollision();
   void spawnObstacle();
   void resetGame();
+  void handleMenuSelection(int choice);
 
 public:
   Game();

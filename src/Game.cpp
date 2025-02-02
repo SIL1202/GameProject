@@ -1,5 +1,7 @@
 #include "Game.hpp"
+#include "SFML/System/Vector2.hpp"
 #include "SFML/Window/Keyboard.hpp"
+#include "SFML/Window/Mouse.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
@@ -58,7 +60,7 @@ void Game::checkCollision() {
 
 void Game::spawnObstacle() {
   float spawnInterval = 1.0f + static_cast<float>(std::rand()) /
-                                   static_cast<float>(RAND_MAX) * 3.5f;
+                                   static_cast<float>(RAND_MAX) * 4.5f;
 
   if (this->obstacleSpawnClock.getElapsedTime().asSeconds() >= spawnInterval) {
     this->obstacleSpawnClock.restart();
@@ -80,6 +82,21 @@ void Game::resetGame() {
   this->obstacleSpawnClock.restart();
 }
 
+void Game::handleMenuSelection(int choice) {
+  switch (choice) {
+  case 0:
+    state = GameState::PLAYING; // "Start Game"
+    break;
+  case 1:
+    std::cout << "Load Save (未實作)\n"; // "Continue"
+    this->state = GameState::PLAYING;
+    break;
+  case 2:
+    this->window->close(); // "Exit"
+    break;
+  }
+}
+
 Game::Game() {
   dt = this->clock.restart().asSeconds();
   this->initFont();
@@ -94,8 +111,14 @@ Game::Game() {
 }
 
 Game::~Game() {
-  delete this->menu;
-  delete this->window;
+  if (this->menu) {
+    delete this->menu;
+    this->menu = nullptr; // 避免指標變成野指標
+  }
+  if (this->window) {
+    delete this->window;
+    this->window = nullptr;
+  }
 }
 
 void Game::updateText() {
@@ -133,24 +156,23 @@ void Game::renderObstacle() {
 
 void Game::updateMenu() {
   if (this->state == GameState::MENU) {
+    sf::Vector2i pixelPos = sf::Mouse::getPosition(*this->window);
+    sf::Vector2f mousePo = this->window->mapPixelToCoords(pixelPos);
+    this->menu->update(mousePo); // 統一處理滑鼠 & 鍵盤選擇
+
     if (this->event.type == sf::Event::KeyPressed) {
-      if (this->event.key.code == sf::Keyboard::Up)
+      if (this->event.key.code == sf::Keyboard::K) // K向上
         this->menu->moveUp();
-      else if (this->event.key.code == sf::Keyboard::Down)
+      else if (this->event.key.code == sf::Keyboard::J) // J向下
         this->menu->moveDown();
       else if (this->event.key.code == sf::Keyboard::Enter) {
         int choice = this->menu->getSelectedIndex();
-        switch (choice) {
-        case 0:
-          state = GameState::PLAYING; // "Start Game"
-          break;
-        case 1:
-          std::cout << "Load Save (未實作)\n"; // "Continue"
-          break;
-        case 2:
-          this->window->close(); // "Exit"
-          break;
-        }
+        this->handleMenuSelection(choice);
+      }
+    } else if (this->event.type == sf::Event::MouseButtonPressed) {
+      if (this->event.mouseButton.button == sf::Mouse::Left) {
+        int choice = this->menu->getSelectedIndex();
+        this->handleMenuSelection(choice);
       }
     }
   }
@@ -180,8 +202,10 @@ void Game::update() {
         this->dino.jump();
       else if ((this->event.key.code == sf::Keyboard::Enter ||
                 this->event.key.code == sf::Keyboard::Space) &&
-               isGameOver)
+               isGameOver) {
         this->resetGame();
+        this->state = GameState::PLAYING;
+      }
       break;
     default:
       break;
@@ -192,6 +216,7 @@ void Game::update() {
       return;
     }
   }
+
   if (this->state == GameState::PLAYING) {
     // game is not over then update dino.
     if (!this->isGameOver) {

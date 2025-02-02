@@ -1,5 +1,6 @@
 #ifndef MENU_HPP
 #define MENU_HPP
+#include "SFML/Graphics/RectangleShape.hpp"
 #include <SFML/Graphics.hpp>
 #include <vector>
 
@@ -9,9 +10,12 @@ private:
   sf::Font font;
   std::vector<sf::Text> options;
   size_t selectedIndex;
+  std::vector<float> scaleFactors;
+  std::vector<sf::RectangleShape> textBackground;
 
   void initFont();
   void initMenu();
+  void renderAnimation();
 
 public:
   Menu(sf::RenderWindow *win);
@@ -20,6 +24,7 @@ public:
   void moveUp();
   void moveDown();
   int getSelectedIndex();
+  void update(sf::Vector2f mousePos);
   void render();
 };
 
