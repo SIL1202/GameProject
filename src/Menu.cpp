@@ -1,7 +1,4 @@
 #include "Menu.hpp"
-#include "SFML/Graphics/Rect.hpp"
-#include "SFML/Graphics/RectangleShape.hpp"
-#include "SFML/System/Vector2.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,10 +13,6 @@ void Menu::initFont() {
 
 void Menu::initMenu() {
   std::vector<std::string> menuOptions = {"Start Game", "Continue", "Exit"};
-  float bgWidth = 250.f; // 固定背景寬度
-  float bgHeight = 50.f; // 固定背景高度
-  float startY = 260.f;  // 第一個選項的 Y 位置
-
   for (size_t i = 0; i < menuOptions.size(); i++) {
     sf::Text text;
     text.setFont(this->font);
@@ -32,19 +25,9 @@ void Menu::initMenu() {
     text.setPosition(this->window->getSize().x / 2.f,
                      250.f + i * 50.f); // 設定位置
 
-    // 選項文字背景設定
-    sf::RectangleShape background;
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setFillColor(sf::Color(0, 0, 0, 0));
-
-    // **確保所有背景大小相同**
-    background.setOrigin(bgWidth / 2.f, bgHeight / 2.f);
-    background.setPosition(this->window->getSize().x / 2.f,
-                           startY + i * bgHeight);
     // 加入到陣列
     this->options.push_back(text);
     this->scaleFactors.push_back(1.0f);
-    this->textBackground.push_back(background);
   }
 }
 
@@ -68,46 +51,40 @@ Menu::~Menu() {}
 
 void Menu::moveUp() {
   if (this->selectedIndex > 0) {
-    this->options[this->selectedIndex].setFillColor(sf::Color::Black);
     this->selectedIndex--;
-    this->options[this->selectedIndex].setFillColor(sf::Color::Red);
   }
 }
 
 void Menu::moveDown() {
   if (this->selectedIndex < this->options.size() - 1) {
-    this->options[this->selectedIndex].setFillColor(sf::Color::Black);
     this->selectedIndex++;
-    this->options[this->selectedIndex].setFillColor(sf::Color::Red);
   }
 }
 
 int Menu::getSelectedIndex() { return this->selectedIndex; }
 
 void Menu::update(sf::Vector2f mousePos) {
-  // bool isMouseOver = false;
-
   for (size_t i = 0; i < this->options.size(); i++) {
     if (this->options[i].getGlobalBounds().contains(mousePos)) {
       this->selectedIndex = i;
-      // isMouseOver = true;  -> to cancel J, K option!!
     }
   }
 
   for (size_t i = 0; i < this->options.size(); i++) {
-    if (i == this->selectedIndex) {
-      this->options[i].setScale(1.2f, 1.2f);
-      this->options[i].setFillColor(sf::Color::Red);
-    } else {
-      this->options[i].setScale(1.0f, 1.0f);
-      this->options[i].setFillColor(sf::Color::Black);
-    }
+    bool isSelected = (i == this->selectedIndex);
+
+    // **焦糖色文字（選中時） & 深灰色（未選中）**
+    sf::Color textColor =
+        isSelected ? sf::Color(180, 90, 40) : sf::Color(40, 40, 40);
+    this->options[i].setFillColor(textColor);
+
+    // **選中時的縮放效果**
+    this->options[i].setScale(isSelected ? 1.2f : 1.0f,
+                              isSelected ? 1.2f : 1.0f);
   }
 }
 
 void Menu::render() {
-  for (size_t i = 0; i < this->textBackground.size(); i++)
-    this->window->draw(this->textBackground[i]);
   this->renderAnimation();
 
   for (size_t i = 0; i < options.size(); i++) {

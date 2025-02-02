@@ -239,7 +239,7 @@ void Game::update() {
 }
 
 void Game::render() {
-  this->window->clear(sf::Color::White); // 設定背景顏色
+  this->window->clear(sf::Color(245, 230, 215, 255)); // 設定背景顏色
 
   if (this->state == GameState::MENU) {
     this->renderMenu();

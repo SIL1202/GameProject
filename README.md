@@ -1,5 +1,18 @@
 # **SFML 遊戲專案開發環境設定指南**
 
+### 執行輸入
+
+複製編輯
+
+```
+rm -rf build
+mkdir build
+cd build
+cmake -S .. -B . -DSFML_DIR=/usr/local/lib/cmake/SFML
+make
+./GameProject
+```
+
 ## **1️⃣ 必要的環境變數設定**
 
 請確保你的 `.zshrc`（或 `.bashrc`）中包含以下設定，以避免執行時找不到 SFML 的標頭檔和 `.dylib`。
