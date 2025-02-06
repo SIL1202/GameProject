@@ -201,6 +201,54 @@ src/Obstacle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/Obstacle.cpp.s
 .PHONY : src/Obstacle.cpp.s
 
+src/PauseMenu.o: src/PauseMenu.cpp.o
+.PHONY : src/PauseMenu.o
+
+# target to build an object file
+src/PauseMenu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/PauseMenu.cpp.o
+.PHONY : src/PauseMenu.cpp.o
+
+src/PauseMenu.i: src/PauseMenu.cpp.i
+.PHONY : src/PauseMenu.i
+
+# target to preprocess a source file
+src/PauseMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/PauseMenu.cpp.i
+.PHONY : src/PauseMenu.cpp.i
+
+src/PauseMenu.s: src/PauseMenu.cpp.s
+.PHONY : src/PauseMenu.s
+
+# target to generate assembly for a file
+src/PauseMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/PauseMenu.cpp.s
+.PHONY : src/PauseMenu.cpp.s
+
+src/SaveManager.o: src/SaveManager.cpp.o
+.PHONY : src/SaveManager.o
+
+# target to build an object file
+src/SaveManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/SaveManager.cpp.o
+.PHONY : src/SaveManager.cpp.o
+
+src/SaveManager.i: src/SaveManager.cpp.i
+.PHONY : src/SaveManager.i
+
+# target to preprocess a source file
+src/SaveManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/SaveManager.cpp.i
+.PHONY : src/SaveManager.cpp.i
+
+src/SaveManager.s: src/SaveManager.cpp.s
+.PHONY : src/SaveManager.s
+
+# target to generate assembly for a file
+src/SaveManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/src/SaveManager.cpp.s
+.PHONY : src/SaveManager.cpp.s
+
 src/dino.o: src/dino.cpp.o
 .PHONY : src/dino.o
 
@@ -267,6 +315,12 @@ help:
 	@echo "... src/Obstacle.o"
 	@echo "... src/Obstacle.i"
 	@echo "... src/Obstacle.s"
+	@echo "... src/PauseMenu.o"
+	@echo "... src/PauseMenu.i"
+	@echo "... src/PauseMenu.s"
+	@echo "... src/SaveManager.o"
+	@echo "... src/SaveManager.i"
+	@echo "... src/SaveManager.s"
 	@echo "... src/dino.o"
 	@echo "... src/dino.i"
 	@echo "... src/dino.s"

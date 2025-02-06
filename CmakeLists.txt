@@ -5,11 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(SFML 2.6 COMPONENTS graphics window system REQUIRED)
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # ✅ **手動加入 SFML 目錄**
 include_directories(/usr/local/include)
 
 # ✅ **手動加入 SFML 頭文件**
-add_executable(GameProject src/main.cpp src/dino.cpp src/Game.cpp src/Obstacle.cpp src/Menu.cpp)
+add_executable(GameProject src/main.cpp src/dino.cpp src/Game.cpp src/Obstacle.cpp src/Menu.cpp src/PauseMenu.cpp src/SaveManager.cpp)
 
 # ✅ **手動連結 SFML 函式庫**
 target_link_libraries(GameProject
