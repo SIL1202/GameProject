@@ -1,9 +1,6 @@
 #include "Game.hpp"
 #include "../include/json.hpp"
 #include "PauseMenu.hpp"
-#include "SFML/System/Vector2.hpp"
-#include "SFML/Window/Keyboard.hpp"
-#include "SFML/Window/Mouse.hpp"
 #include <cstdlib>
 #include <iostream>
 using json = nlohmann::json;
@@ -37,7 +34,7 @@ void Game::initcurrentScoreText() {
   this->currentScoreText.setFont(this->font);
   this->currentScoreText.setCharacterSize(20);
   this->currentScoreText.setFillColor(sf::Color(255, 150, 50));
-  this->currentScoreText.setPosition(550.f, 10.f);
+  this->currentScoreText.setPosition(600.f, 10.f);
   this->currentScoreText.setString("NONE");
 }
 
@@ -70,6 +67,12 @@ void Game::checkCollision() {
   for (auto &obstacle : this->obstacles) {
     if (dinoBound.intersects(obstacle.getBounds())) {
       std::cout << "Collision Detected! Game Over!\n";
+
+      // 先更新最高分
+      if (this->currentScore > this->highestScore)
+        this->highestScore = this->currentScore;
+
+      // 在設置 Game Over 狀態
       this->isGameOver = true;
       return;
     }
@@ -98,11 +101,14 @@ void Game::resetGame() {
   this->dino.reset(); // go Dino to reset dino's position.
   this->obstacles.clear();
   this->obstacleSpawnClock.restart();
+
+  if (this->currentScore > this->highestScore) {
+    this->highestScore = this->currentScore;
+    this->saveGame();
+  }
+
   this->currentScore = 0;
   this->dinoLevel = 1;
-
-  if (this->currentScore > this->highestScore)
-    this->highestScore = this->currentScore;
 }
 
 void Game::handleMenuSelection(int choice) {
@@ -112,8 +118,7 @@ void Game::handleMenuSelection(int choice) {
     this->state = GameState::PLAYING; // "Start Game"
     break;
   case 1:
-    this->loadGame();
-    this->state = GameState::PLAYING;
+    this->state = GameState::PLAYING; // "Continue"
     break;
   case 2:
     this->window->close(); // "Exit"
@@ -128,14 +133,15 @@ void Game::handlePauseMenuSelection(int choice) {
     this->state = GameState::PLAYING;
     break;
   case 1:
-    std::cout << "選擇了 Continue\n";
-    this->loadGame();
+    std::cout << "選擇了 Restart Game\n";
+    this->resetGame();
     this->state = GameState::PLAYING;
     break;
   case 2:
     std::cout << "存檔並退出...\n"; // 這行應該要輸出
     this->saveGame();
     this->window->close();
+    exit(0);
     break;
   default:
     std::cout << "未知選項: " << choice << "\n";
@@ -154,13 +160,12 @@ void Game::loadGame() {
   if (this->saveManager.loadGame(highestScore, dinoLevel, currentScore)) {
     std::cout << "Game loaded! Highest Score: " << highestScore
               << ", Dino Level: " << dinoLevel
-              << "Current Score: " << currentScore << std::endl;
+              << ", Current Score: " << currentScore << std::endl;
   }
 }
 
 Game::Game() {
   dt = this->clock.restart().asSeconds();
-  this->loadGame();
   this->initFont();
   this->initjumpCountingText();
   this->initWindow();
@@ -175,6 +180,7 @@ Game::Game() {
   this->state = GameState::MENU;
   this->menu = new Menu(this->window);
   this->pauseMenu = new PauseMenu(this->window);
+  this->loadGame();
 }
 
 Game::~Game() {
@@ -351,7 +357,7 @@ void Game::update() {
     // game is not over then update dino.
     if (!this->isGameOver) {
       // 遊戲進行中，正常更新 Dino
-      this->currentScore += 1;
+      this->currentScore += static_cast<int>(100 * dt);
 
       //**更新最高分**
       if (this->currentScore > this->highestScore)

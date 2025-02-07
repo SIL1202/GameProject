@@ -34,6 +34,7 @@ private:
   int highestScore;
   int dinoLevel;
   int currentScore;
+  bool shouldClose;
 
   void initFont();
   void initjumpCountingText();
