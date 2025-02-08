@@ -47,6 +47,7 @@ private:
   void resetGame();
   void handleMenuSelection(int choice);
   void handlePauseMenuSelection(int choice);
+  void checkDinoLevelUp();
 
 public:
   Game();

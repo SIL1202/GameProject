@@ -1,4 +1,5 @@
 #include "dino.hpp"
+#include "SFML/Graphics/Color.hpp"
 #include "SFML/Graphics/Rect.hpp"
 #include "SFML/Graphics/RenderTarget.hpp"
 #include "SFML/System/Vector2.hpp"
@@ -28,6 +29,26 @@ Dino::Dino() {
 }
 
 Dino::~Dino() {}
+
+void Dino::upgradeAppearance(int level) {
+  switch (level) {
+  case 2:
+    this->shape.setFillColor(sf::Color(255, 215, 0)); // 金色
+    break;
+  case 3:
+    this->shape.setFillColor(sf::Color(255, 140, 0)); // 橘色
+    break;
+  case 4:
+    this->shape.setFillColor(sf::Color(220, 20, 60)); // 紅色
+    break;
+  case 5:
+    this->shape.setFillColor(sf::Color::White); // 最高等級 白色
+    break;
+  default:
+    this->shape.setFillColor(sf::Color::Black);
+    break;
+  }
+}
 
 void Dino::jump() {
   if (this->shape.getPosition().y >= 330.f) {

@@ -3,6 +3,7 @@
 #include "PauseMenu.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 using json = nlohmann::json;
 #include <sstream>
 
@@ -109,6 +110,7 @@ void Game::resetGame() {
 
   this->currentScore = 0;
   this->dinoLevel = 1;
+  this->dino.upgradeAppearance(1);
 }
 
 void Game::handleMenuSelection(int choice) {
@@ -149,18 +151,14 @@ void Game::handlePauseMenuSelection(int choice) {
   }
 }
 
-void Game::saveGame() {
-  if (this->currentScore > this->highestScore) {
-    this->highestScore = this->currentScore; // 確保存檔時是最高分
-  }
-  this->saveManager.saveGame(highestScore, dinoLevel, currentScore);
-}
+void Game::checkDinoLevelUp() {
+  static std::vector<int> levelThresholds = {1000, 2000, 3000, 4000};
 
-void Game::loadGame() {
-  if (this->saveManager.loadGame(highestScore, dinoLevel, currentScore)) {
-    std::cout << "Game loaded! Highest Score: " << highestScore
-              << ", Dino Level: " << dinoLevel
-              << ", Current Score: " << currentScore << std::endl;
+  if (this->dinoLevel < levelThresholds.size() + 1 &&
+      this->currentScore >= levelThresholds[this->dinoLevel - 1]) {
+    this->dinoLevel++;
+    std::cout << "Dino 升級至 Level " << this->dinoLevel << "! \n";
+    this->dino.upgradeAppearance(this->dinoLevel);
   }
 }
 
@@ -358,6 +356,7 @@ void Game::update() {
     if (!this->isGameOver) {
       // 遊戲進行中，正常更新 Dino
       this->currentScore += static_cast<int>(100 * dt);
+      this->checkDinoLevelUp();
 
       //**更新最高分**
       if (this->currentScore > this->highestScore)
@@ -398,6 +397,21 @@ void Game::render() {
   }
 
   this->window->display();
+}
+
+void Game::saveGame() {
+  if (this->currentScore > this->highestScore) {
+    this->highestScore = this->currentScore; // 確保存檔時是最高分
+  }
+  this->saveManager.saveGame(highestScore, dinoLevel, currentScore);
+}
+
+void Game::loadGame() {
+  if (this->saveManager.loadGame(highestScore, dinoLevel, currentScore)) {
+    std::cout << "Game loaded! Highest Score: " << highestScore
+              << ", Dino Level: " << dinoLevel
+              << ", Current Score: " << currentScore << std::endl;
+  }
 }
 
 void Game::run() {

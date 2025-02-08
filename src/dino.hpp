@@ -24,6 +24,7 @@ public:
   ~Dino();
 
   unsigned int getJumpCount();
+  void upgradeAppearance(int dinoLevel);
   void update(float dt);
   void render(sf::RenderTarget &target);
   void jump();
