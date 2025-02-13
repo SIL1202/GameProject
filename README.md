@@ -24,6 +24,7 @@ make
 ```
 export CPATH=/usr/local/include:$CPATH
 ```
+
 ```
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH`
 ```
@@ -35,12 +36,13 @@ export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH`
 ```
 export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH
 ```
+
 ```
 export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 ```
 
-
 📌 **這些變數的用途：**
+
 - `CPATH`：讓編譯器（如 `clang++`）可以找到 SFML 的標頭檔（`SFML/Graphics.hpp`）。
 - `LIBRARY_PATH`：讓編譯器可以找到 SFML 的靜態或動態庫（`.dylib`）。
 - `DYLD_LIBRARY_PATH`：讓 macOS 的動態連結器 `dyld` 在執行時能找到 SFML 所需的 `.dylib`。
@@ -53,6 +55,7 @@ export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 ```
 echo 'export CPATH=/usr/local/include:$CPATH' >> ~/.zshrc echo 'export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc source ~/.zshrc
 ```
+
 ---
 
 ## **2️⃣ 常見錯誤 & 解決方案**
@@ -60,6 +63,7 @@ echo 'export CPATH=/usr/local/include:$CPATH' >> ~/.zshrc echo 'export LIBRARY_P
 ### **❌ **`dyld: Library not loaded: libsfml-graphics.2.6.dylib`
 
 **🔹 解決方法：**
+
 - **確認 **`.dylib`** 是否存在**：
 
   複製編輯
@@ -69,6 +73,7 @@ echo 'export CPATH=/usr/local/include:$CPATH' >> ~/.zshrc echo 'export LIBRARY_P
   ```
 
   如果檔案缺失，請重新下載或安裝 SFML。
+
 - **嘗試手動增加 **`rpath`：
 
   複製編輯
@@ -96,3 +101,23 @@ rm -rf build mkdir build cd build cmake -S .. -B . -DSFML_DIR=/usr/local/lib/cma
 ```
 ./build/GameProject
 ```
+
+## **我最後是使用 runGame.sh 腳本來編譯和執行遊戲**
+
+\*但因為 Bash 不會繼承 zsh 設置的環境變數，導致 ./GameProject 找不到 SFML 的函式庫。所以要在 runGame.sh 裡加入:
+
+複製編輯
+
+```
+echo 'export CPATH=/usr/local/include:$CPATH' >> ~/.zshrc echo 'export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc source ~/.zshrc
+```
+
+\*然後在終端輸入:
+
+複製編輯
+
+```
+bash runGame.sh
+```
+
+\*即可
