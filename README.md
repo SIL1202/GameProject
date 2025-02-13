@@ -88,13 +88,25 @@ rm -rf build mkdir build cd build cmake -S .. -B . -DSFML_DIR=/usr/local/lib/cma
 
 ---
 
-## **我最後是使用 runGame.sh 腳本來編譯和執行遊戲**
+## **我最後是使用 `runGame.sh` 腳本來編譯和執行遊戲**
 
-- 因為 Bash 不會繼承 zsh 設置的環境變數，導致 ./GameProject 找不到 SFML 的函式庫。所以要在 runGame.sh 裡加入:
+- 因為 `Bash` 不會繼承 `zsh` 設置的環境變數，導致 `./GameProject` 找不到 `SFML` 的函式庫。所以要在 `runGame.sh` 裡加入:
 
-```
-echo 'export CPATH=/usr/local/include:$CPATH' >> ~/.zshrc echo 'export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc echo 'export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH' >> ~/.zshrc source ~/.zshrc
-```
+  ```
+  export CPATH=/usr/local/include:$CPATH
+  ```
+
+  ```
+  export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH`
+  ```
+
+  ```
+  export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH
+  ```
+
+  ```
+  export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+  ```
 
 - 然後在終端輸入:
 
