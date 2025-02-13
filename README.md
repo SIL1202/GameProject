@@ -110,10 +110,10 @@ rm -rf build mkdir build cd build cmake -S .. -B . -DSFML_DIR=/usr/local/lib/cma
 
 - 然後在終端輸入:
 
-```
-bash runGame.sh
-```
+  ```
+  bash runGame.sh
+  ```
 
-即可
+- 即可
 
 ---
