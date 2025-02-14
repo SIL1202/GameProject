@@ -4,7 +4,7 @@
 #include <vector>
 
 void PauseMenu::initFont() {
-  if (!this->font.loadFromFile("/Users/sil/.config/nvim/GameProject/assets/"
+  if (!this->font.loadFromFile("/Users/sil/Projects/GameProject/assets/"
                                "JetBrainsMonoNerdFont-Bold.ttf")) {
     std::cerr << "Failed to load font(initFont)!" << std::endl;
     exit(1);

@@ -1,7 +1,7 @@
 CMakeFiles/GameProject.dir/src/main.cpp.o: \
-  /Users/sil/.config/nvim/GameProject/src/main.cpp \
-  /Users/sil/.config/nvim/GameProject/src/Game.hpp \
-  /Users/sil/.config/nvim/GameProject/src/Menu.hpp \
+  /Users/sil/Projects/GameProject/src/main.cpp \
+  /Users/sil/Projects/GameProject/src/Game.hpp \
+  /Users/sil/Projects/GameProject/src/Menu.hpp \
   /usr/local/include/SFML/Graphics.hpp \
   /usr/local/include/SFML/Window.hpp /usr/local/include/SFML/System.hpp \
   /usr/local/include/SFML/Config.hpp \
@@ -1034,10 +1034,10 @@ CMakeFiles/GameProject.dir/src/main.cpp.o: \
   /usr/local/include/SFML/Graphics/Sprite.hpp \
   /usr/local/include/SFML/Graphics/Text.hpp \
   /usr/local/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/sil/.config/nvim/GameProject/src/Obstacle.hpp \
-  /Users/sil/.config/nvim/GameProject/src/PauseMenu.hpp \
-  /Users/sil/.config/nvim/GameProject/src/SaveManager.hpp \
-  /Users/sil/.config/nvim/GameProject/src/../include/json.hpp \
+  /Users/sil/Projects/GameProject/src/Obstacle.hpp \
+  /Users/sil/Projects/GameProject/src/PauseMenu.hpp \
+  /Users/sil/Projects/GameProject/src/SaveManager.hpp \
+  /Users/sil/Projects/GameProject/src/../include/json.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/forward_list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/valarray \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/cassert \
@@ -1094,4 +1094,4 @@ CMakeFiles/GameProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/year_month_day.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/literals.h \
-  /Users/sil/.config/nvim/GameProject/src/dino.hpp
+  /Users/sil/Projects/GameProject/src/dino.hpp
