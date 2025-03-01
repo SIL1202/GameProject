@@ -4,8 +4,8 @@
 #include <iostream>
 
 Obstacle::Obstacle(const sf::Vector2f &dinoSize) {
-  auto width = 40.f + static_cast<float>(rand() % 75);
-  auto height = 40.f + static_cast<float>(rand() % 75);
+  auto width = 40.f + static_cast<float>(rand() % 70);
+  auto height = 40.f + static_cast<float>(rand() % 70);
 
   this->shape.setOrigin(0.f, 0.f);
   this->shape.setSize(sf::Vector2f(width, height));
