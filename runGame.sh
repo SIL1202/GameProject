@@ -6,22 +6,19 @@
 # export CPATH=/usr/local/include:$CPATH  # 指定 C/C++ 編譯器查找標頭檔 (.h, .hpp) 的路徑
 # export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH  # 指定編譯時要查找靜態庫 (.a) 或共享庫 (.dylib) 的路徑
 
-
 # 設定執行時動態連結庫的搜尋路徑
 # 這行的作用是讓執行時 (runtime) 可以找到 **Homebrew 安裝的函式庫 (如 SFML 依賴的 OpenAL)**
 # 但你的 SFML 不是從 Homebrew 安裝的，而且 OpenAL 可能已經安裝在 /usr/local/lib，
 # 所以這行 **可能可以註解**，但需要確認 OpenAL 是否真的在 /usr/local/lib
 export DYLD_LIBRARY_PATH=/opt/homebrew/lib:/opt/homebrew/opt/openal-soft/lib:$DYLD_LIBRARY_PATH
 
-
 # 這行是 **讓執行時可以找到 SFML 的函式庫**
-# 你的 SFML .dylib 檔案位於 /usr/local/lib，所以這行 **不能註解**                                                           
-export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH 
-
+# 你的 SFML .dylib 檔案位於 /usr/local/lib，所以這行 **不能註解**
+export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
 
 # 設定編譯器 LLVM (clang++) 的路徑，確保 CMake 和 make 使用正確的工具鏈
 # 如果你的編譯環境 **沒有使用 Homebrew 安裝的 LLVM**，這行可以註解。
-# 但如果 CMake 需要這個路徑來找到 clang++，這行就不能註解。                                                          
+# 但如果 CMake 需要這個路徑來找到 clang++，這行就不能註解。
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # 定義顏色
