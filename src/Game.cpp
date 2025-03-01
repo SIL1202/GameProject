@@ -64,7 +64,6 @@ void Game::initgameOverText() {
 // check collision of each obstacle
 void Game::checkCollision() {
   auto dinoBound = this->dino.getBound();
-
   for (auto &obstacle : this->obstacles) {
     if (dinoBound.intersects(obstacle.getBounds())) {
       std::cout << "Collision Detected! Game Over!\n";
@@ -110,7 +109,7 @@ void Game::resetGame() {
 
   this->currentScore = 0;
   this->dinoLevel = 1;
-  this->dino.upgradeAppearance(1);
+  // this->dino.upgradeAppearance(1);
 }
 
 void Game::handleMenuSelection(int choice) {
@@ -158,7 +157,7 @@ void Game::checkDinoLevelUp() {
       this->currentScore >= levelThresholds[this->dinoLevel - 1]) {
     this->dinoLevel++;
     std::cout << "Dino 升級至 Level " << this->dinoLevel << "! \n";
-    this->dino.upgradeAppearance(this->dinoLevel);
+    // this->dino.upgradeAppearance(this->dinoLevel);
   }
 }
 
