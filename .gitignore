@@ -18,3 +18,5 @@ Makefile
 *.swp
 *.swo
 
+# 儲存的資料
+*.json

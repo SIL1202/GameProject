@@ -1,3 +1,0 @@
-/Users/sil/Projects/GameProject/build/CMakeFiles/GameProject.dir
-/Users/sil/Projects/GameProject/build/CMakeFiles/edit_cache.dir
-/Users/sil/Projects/GameProject/build/CMakeFiles/rebuild_cache.dir
