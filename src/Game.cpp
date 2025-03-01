@@ -354,7 +354,13 @@ void Game::update() {
     // game is not over then update dino.
     if (!this->isGameOver) {
       // 遊戲進行中，正常更新 Dino
-      this->currentScore += static_cast<int>(100 * dt);
+      static float scoreAccumulated = 0.f;
+      scoreAccumulated += 10 * dt; // 讓 `score` 用 float 累積
+      if (scoreAccumulated >= 1.0f) {
+        this->currentScore += static_cast<int>(scoreAccumulated);
+        scoreAccumulated -= static_cast<int>(scoreAccumulated); // 保留小數部分
+      }
+
       this->checkDinoLevelUp();
 
       //**更新最高分**
