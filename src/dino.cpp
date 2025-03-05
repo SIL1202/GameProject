@@ -5,6 +5,14 @@
 #include "SFML/System/Vector2.hpp"
 #include <iostream>
 
+void Dino::initSound() {
+  if (!jumpBuffer.loadFromFile(
+          "/Users/sil/Projects/GameProject/assets/sound.wav")) {
+    std::cerr << "Failed to load jump.wav" << std::endl;
+  }
+  jumpSound.setBuffer(jumpBuffer);
+}
+
 void Dino::initTexture() {
   if (!this->texture.loadFromFile(
           "/Users/sil/Projects/GameProject/assets/dino.png")) {
@@ -39,6 +47,7 @@ void Dino::initSprite() {
 Dino::Dino() {
   this->initTexture();
   this->initSprite();
+  this->initSound();
   this->isJumping = false;
   this->jumpCount = 0;
   this->velocity = sf::Vector2f(0.f, 0.f);
@@ -71,6 +80,7 @@ void Dino::jump() {
     this->isJumping = true;
     this->velocity.y = -300.f;
     this->jumpCount++;
+    this->jumpSound.play();
     std::cout << "Jump Count: " << this->jumpCount << std::endl;
   }
 }

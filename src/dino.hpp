@@ -1,10 +1,12 @@
 #ifndef DINO_HPP
 #define DINO_HPP
 
+#include "SFML/Audio/SoundBuffer.hpp"
 #include "SFML/Graphics/Rect.hpp"
 #include "SFML/Graphics/RectangleShape.hpp"
 #include "SFML/Graphics/RenderTarget.hpp"
 #include <SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 
 class Dino {
 private:
@@ -13,9 +15,12 @@ private:
   sf::Sprite sprite;
   sf::Vector2f velocity;
   sf::Clock clock;
+  sf::SoundBuffer jumpBuffer;  // 存音效檔案
+  sf::Sound jumpSound;         // 播放音效  
   bool isJumping;
   unsigned int jumpCount;
 
+  void initSound();
   void initTexture();
   void initSprite();
 
