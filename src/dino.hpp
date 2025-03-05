@@ -11,7 +11,7 @@
 class Dino {
 private:
   sf::RectangleShape shape;
-  sf::Texture texture;
+  sf::Texture textures[3];
   sf::Sprite sprite;
   sf::Vector2f velocity;
   sf::Clock clock;
@@ -24,6 +24,10 @@ private:
   void initTexture();
   void initSprite();
 
+    // 動畫變數
+    int frameIndex;
+    float frameDuration;
+    float frameTime;
 public:
   Dino();
   ~Dino();

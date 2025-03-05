@@ -14,15 +14,24 @@ void Dino::initSound() {
 }
 
 void Dino::initTexture() {
-  if (!this->texture.loadFromFile(
-          "/Users/sil/Projects/GameProject/assets/dino.png")) {
+  if (!this->textures[0].loadFromFile(
+          "/Users/sil/Projects/GameProject/assets/dino.png") ||
+      !this->textures[1].loadFromFile(
+          "/Users/sil/Projects/GameProject/assets/dino2.png") ||
+      !this->textures[2].loadFromFile(
+          "/Users/sil/Projects/GameProject/assets/dino3.png")) {
     std::cerr << "Failed to load dino.png" << std::endl;
   }
 }
 
 void Dino::initSprite() {
-  this->sprite.setTexture(this->texture);
+  this->sprite.setTexture(this->textures[0]);
   sf::FloatRect bounds = this->sprite.getLocalBounds();
+
+  // 設定動畫變數
+  this->frameIndex = 0;
+  this->frameDuration = 0.8f; // 每 0.1 秒切換一次
+  this->frameTime = 0.0f;
 
   // 設定原點為底部中央
   this->sprite.setOrigin(bounds.width / 2, bounds.height);
@@ -101,6 +110,18 @@ void Dino::reset() {
 unsigned int Dino::getJumpCount() { return this->jumpCount; }
 
 void Dino::update(float dt) {
+  // 計時器累積時間
+  this->frameTime += dt;
+
+  // 每 0.1 秒切換下一幀
+  if (this->frameTime >= this->frameDuration) {
+    this->frameTime = 0.0f;
+    this->frameIndex = (this->frameIndex + 1) % 3; // 3 張圖循環
+
+    // 切換 Dino 的圖片
+    this->sprite.setTexture(this->textures[this->frameIndex]);
+  }
+
   if (this->isJumping) {
     if (this->velocity.y < 0) {
       // 在上升時，減少重力影響
